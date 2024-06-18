@@ -59,3 +59,16 @@ resource "aws_security_group" "ec2_security_group" {
     Name = "Aj_sg"
   }
 }
+
+resource "null_resource" "remove_s3_lock" {
+  provisioner "local-exec" {
+    command = <<EOT
+      aws s3 ls s3://jenkinscd-bucket/path/to/
+      if aws s3 ls s3://jenkinscd-bucket//terraform/states/project1/terraform/terraform.tfstate.lock; then
+        aws s3 rm s3://jenkinscd-bucket/terraform/states/project1/terraform/terraform.tfstate.lock
+      else
+        echo "No lock file found."
+      fi
+    EOT
+  }
+}
