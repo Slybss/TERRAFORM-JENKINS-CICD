@@ -1,8 +1,8 @@
 terraform {
   backend "s3" {
-    bucket         = "jenkinscds-bucket"
+    bucket         = "tubularly"
     key            = "my-terraform-environment/main"
     region         = "us-east-1"
-    dynamodb_table = "mrcloudbook-dynamo-db-table"
+    dynamodb_table = "mrsly-dynamo-db-table"
   }
 }
