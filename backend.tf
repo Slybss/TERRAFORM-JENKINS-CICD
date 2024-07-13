@@ -1,8 +1,8 @@
 terraform {
   backend "s3" {
-    bucket         = "tubularlyses"
+    bucket         = "tubularlysis"
     key            = "my-terraform-environment/main"
     region         = "us-east-1"
-    dynamodb_table = "mrslybss-dynamo-db-table"
+    dynamodb_table = "mrslybssi-dynamo-db-table"
   }
 }
