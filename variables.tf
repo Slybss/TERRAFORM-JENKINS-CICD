@@ -4,7 +4,7 @@ variable "aws_region" {
 }
 variable "key_name" {
   description = " SSH keys to connect to ec2 instance"
-  default     = "ud"
+  default     = "ud.ppk"
 }
 variable "instance_type" {
   description = "instance type for ec2"
@@ -17,7 +17,7 @@ variable "ami_id" {
 variable "bucket_name" {
   description = "The name of the S3 bucket to create"
   type        = string
-  default     = "jenkinscd-bucket"
+  default     = "tubularly"
 }
 
 variable "acl" {
